@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141826">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Convergence">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<title>Convergence</title>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">CONVERGENCE</div>
+    <div class="badge">Choice-driven visual novel</div>
+  </div>
+
+  <section id="mainMenu" class="panel hero">
+    <h1>Every choice creates another world.</h1>
+    <p>A branching multiverse adventure featuring Miku, Nino, Rem, Revan, Max and Thanos. This build contains the working game engine and opening vertical slice.</p>
+    <div class="actions">
+      <button id="continueBtn" class="btn primary">Continue</button>
+      <button id="newBtn" class="btn">New / Load Game</button>
+    </div>
+    <div class="install">iPhone installation will work once this folder is hosted on a free HTTPS host. Then use Safari → Share → Add to Home Screen.</div>
+  </section>
+
+  <section id="savesScreen" class="hidden">
+    <div class="gamebar" style="margin-bottom:12px">
+      <div><h2 style="margin:0">Save Slots</h2><div class="small">Five independent named routes</div></div>
+      <button id="backFromSaves" class="btn">Back</button>
+    </div>
+    <div id="slots" class="grid"></div>
+  </section>
+
+  <section id="gameScreen" class="hidden story-shell">
+    <div class="gamebar">
+      <div class="left">
+        <button id="menuBtn" class="btn">Menu</button>
+        <button id="saveBtn" class="btn">Save</button>
+      </div>
+      <div class="right small"><span id="chapterLabel">Chapter 1</span><span id="autosaveLabel"></span></div>
+    </div>
+    <div class="scene">
+      <div class="dialogue">
+        <div id="speaker" class="speaker">Narrator</div>
+        <div id="storyText" class="text"></div>
+      </div>
+    </div>
+    <div id="choices" class="choices"></div>
+  </section>
+</div>
+
+<div id="nameModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <form id="nameForm" class="modal">
+    <h2 id="modalTitle">Name Save</h2>
+    <label for="slotNameInput">Save name</label>
+    <input id="slotNameInput" maxlength="32" autocomplete="off">
+    <div class="actions" style="justify-content:flex-end">
+      <button id="cancelModal" type="button" class="btn">Cancel</button>
+      <button type="submit" class="btn primary">Confirm</button>
+    </div>
+  </form>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

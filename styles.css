@@ -1,0 +1,52 @@
+
+:root{
+  --bg:#111522;--panel:#1b2133;--panel2:#222a40;--text:#f5f7ff;--muted:#aeb7cc;
+  --accent:#9da9ff;--accent2:#f0a6d2;--danger:#ff8e9e;--good:#9ee6bf;--border:#343d58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:linear-gradient(180deg,#0c101b,#171d2d);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100%}
+body{min-height:100vh}
+button,input{font:inherit}
+button{touch-action:manipulation}
+.app{max-width:900px;margin:0 auto;padding:20px 16px 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.brand{font-weight:800;letter-spacing:.04em}
+.badge{font-size:.8rem;color:var(--muted)}
+.panel{background:rgba(27,33,51,.96);border:1px solid var(--border);border-radius:20px;padding:18px}
+.hidden{display:none!important}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(1.8rem,7vw,3.4rem);line-height:1.05;margin-bottom:10px}
+h2{font-size:1.25rem}
+.hero{padding:34px 20px;text-align:center}
+.hero p{color:var(--muted);max-width:600px;margin:0 auto 22px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:14px;padding:12px 16px;min-height:46px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#111522;border-color:transparent;font-weight:800}
+.btn.danger{border-color:#7a3945;color:#ffc1ca}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.slot{display:flex;flex-direction:column;gap:10px;min-height:180px}
+.slot .meta{color:var(--muted);font-size:.9rem;line-height:1.45}
+.slotname{font-weight:800;font-size:1.05rem}
+.slot-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.story-shell{display:grid;gap:14px}
+.scene{min-height:240px;background:
+radial-gradient(circle at 20% 20%,rgba(157,169,255,.20),transparent 34%),
+radial-gradient(circle at 80% 60%,rgba(240,166,210,.13),transparent 32%),
+linear-gradient(160deg,#202a43,#141927);
+border:1px solid var(--border);border-radius:20px;padding:22px;display:flex;align-items:flex-end}
+.dialogue{width:100%;background:rgba(9,12,20,.78);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px}
+.speaker{font-weight:800;margin-bottom:6px}
+.text{line-height:1.62}
+.choices{display:grid;gap:10px}
+.choice{text-align:left;width:100%;padding:14px 16px;background:var(--panel);border:1px solid var(--border);border-radius:14px;color:var(--text);cursor:pointer;min-height:50px}
+.choice:hover{border-color:var(--accent)}
+.gamebar{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between}
+.gamebar .left,.gamebar .right{display:flex;gap:8px;flex-wrap:wrap}
+.small{font-size:.85rem;color:var(--muted)}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);display:grid;place-items:center;padding:18px;z-index:20}
+.modal{max-width:520px;width:100%;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:18px}
+.modal input{width:100%;background:#0f1420;color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px 13px;font-size:16px;margin:8px 0 14px}
+.notice{padding:10px 12px;border-radius:12px;background:#20283d;color:var(--muted);margin-top:12px}
+.install{margin-top:14px;color:var(--muted);font-size:.9rem}
+@media (max-width:520px){.app{padding:12px 10px 36px}.hero{padding:26px 14px}.scene{min-height:300px;padding:12px}.dialogue{padding:14px}.btn,.choice{min-height:48px}}
